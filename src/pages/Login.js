@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import AuthCard from "../components/AuthCard";
 import InputField from "../components/InputField";
+import { BookOpen } from "lucide-react";
 
 const Login = () => {
   return (
     <div className="auth-container">
-      <div className="logo">
-        📘
+      <div className="logo flex items-center justify-center">
+        <BookOpen size={24} />
       </div>
 
       <h1>PathForge</h1>
