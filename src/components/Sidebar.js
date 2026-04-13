@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   BookOpen,
   LayoutDashboard,
@@ -8,6 +8,7 @@ import {
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -25,10 +26,14 @@ const Sidebar = () => {
           <span>PathForge</span>
         </div>
 
-        <div className="menu active">
+        <div
+          className={`menu ${location.pathname === "/" ? "active" : ""}`}
+          onClick={() => navigate("/")}
+        >
           <LayoutDashboard size={20} />
           <span>Dashboard</span>
         </div>
+
       </div>
 
       {/* Bottom */}

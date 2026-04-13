@@ -2,8 +2,11 @@ import Sidebar from "../components/Sidebar";
 import StatCard from "../components/StatCard";
 import "../styles/dashboard.css";
 import { Plus, PackageOpen } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="dashboard">
       <Sidebar />
@@ -15,7 +18,10 @@ const Dashboard = () => {
             <p>Pick up where you left off.</p>
           </div>
 
-          <button className="new-btn flex items-center gap-2">
+          <button 
+             className="new-btn flex items-center gap-2"
+             onClick={() => navigate("/create")}
+          >
             <Plus size={18} />
             New Path
           </button>
